@@ -1,89 +1,89 @@
-#include <stdio.h>
-
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+# include <stdio.h>
 
 int main() {
+    // DEFININDO VARIAVEIS DO JOGO DE XADREZ
+
+    int opcao, sentido;
+    char nome [20], sentido_peca[20], diagonal[20];
 
 
-    // Variaveis
 
-    int torre, bispo, rainha, opcao;
-    char sentido[20], diagonal[20];
+    printf("Ola, Seja bem vindo ao jogo de simulacao de xadrez... entre com seu nome: \n");
+    scanf("%s", &nome);
 
-    // Menu interativo
+    // DEFININDO A BLOCO DE CÓDIGO
 
     do {
-        printf("#### DESAFIO JOGO XADREZ ####\n ");
-        printf("=============================\n");
-        printf("1. para movimentar a TORRE.\n");
-        printf("2. para movimentar a RAINHA.\n");
-        printf("3. para movimentar o BISPO.\n");
-        printf("4. Sair do programa.\n");
-        printf("==============================\n");
-        printf("Informe a opcao desejada: \n");
+        // DEFININDO O MENU DO JOGO DE XADREX
+        printf("#### JOGO DE XADREZ ####\n");
+        printf("================================================================\n");
+        printf("Ola, %s vamos iniciar o jogo ! selecione uma das opcoes abaixo.\n", nome);
+        printf("1. Movimentar a TORRE ?.\n");
+        printf("2. Movimentar a RAINHA ?.\n");
+        printf("3. Movimentar o BISPO ?.\n");
+        printf("4. Sair do Jogo ?.\n");
+        printf("================================================================\n");
+
+        // DEFININDO A INTERAÇÃO COM O USUÁRIO
+        printf("Selecione uma das opcoes abaixo: \n");
         scanf("%d", &opcao);
 
+        // DEFININDO O BLOCO DE CONDIÇÕES
         switch (opcao) {
             case 1:
-                printf("### OPCAO SELECIONADA: MOVIMENTAR TORRE ###\n");
-                printf("============================================\n");
-                printf("Informe quantas casas voce deseja movimentar a TORRE : \n");
-                scanf("%d", &torre);
-                printf("Informe o sentido da movimentacao: \n");
-                scanf("%s", &sentido);
+                printf("### Opcao selecionada: movimentar a TORRE ###\n");
+                printf("Informe quantas vezes deseja movimentar: \n");
+                scanf("%d", &sentido);
+                printf("Informe o sentido do movimento [Direita-Esquerda-Cima-Baixo]: \n ");
+                scanf("%s", &sentido_peca);
 
-                // Logica da peça Torre
-                for (torre = 1; torre <= 5; torre++) {
-                    printf("Voce movimentou a torre %d a %s.\n",torre, sentido);
+                for (sentido = 1; sentido >=1 && sentido <= 5; sentido++) {
+                    printf("Voce movimentou a peca %d contagem e para %s.\n",sentido, sentido_peca);
                 }
-                printf("Peca movimentada com sucesso !\n");
-                printf("=====================================\n");
+                printf("PARABENS ! Peca movimentada com sucesso !\n");
+                printf("=========================================\n");
                 break;
             case 2:
-                printf("### OPCAO SELECIONADA: MOVIMENTAR RAINHA ###\n");
-                printf("============================================\n");
-                printf("Informe quantas casas voce deseja movimentar a RAINHA : \n");
-                scanf("%d", &rainha);
-                printf("Informe o sentido da movimentacao: \n");
-                scanf("%s", &sentido);
+                printf("### Opcao selecionada: movimentar a RAINHA ###\n");
+                printf("Informe quantas vezes deseja movimentar: \n");
+                scanf("%d", &sentido);
+                printf("Informe o sentido do movimento [Direita-Esquerda-Cima-Baixo]: \n ");
+                scanf("%s", &sentido_peca);
 
-                for (rainha = 1; rainha <= 8; rainha++) {
-                    printf("Voce movimentou a rainha %d a %s.\n", rainha, sentido);
+                for (sentido = 1; sentido >= 1 && sentido <= 8; sentido++) {
+                    printf("Voce movimentou a peca %d contagem e para %s.\n",sentido, sentido_peca);
                 }
-                printf("Peca movimentada com sucesso !\n");
-                printf("=====================================\n");
+                printf("PARABENS ! Peca movimentada com sucesso !\n");
+                printf("==========================================\n");
                 break;
             case 3:
-                printf("### OPCAO SELECIONADA: MOVIMENTAR BISPO ###\n");
-                printf("===========================================\n");
-                printf("Informe quantas casas voce deseja movimentar o BISPO : \n");
-                scanf("%d", &bispo);
-                printf("Informe o sentido da movimentacao diagonal: \n");
+                printf("### Opcao selecionada: movimentar o BISPO ###\n");
+                printf("Informe quantas vezes deseja movimentar: \n");
+                scanf("%d", &sentido);
+                printf("Informe o sentido da diagonal [Cima-Baixo]: \n ");
                 scanf("%s", &diagonal);
-                printf("Informe o sentido da movimentacao: \n");
-                scanf("%s", &sentido);
+                printf("Informe o sentido do movimento [Direita-Esquerda]: \n ");
+                scanf("%s", &sentido_peca);
 
-                for (bispo = 1; bispo <= 5 ; bispo ++) {
-                    printf("Voce movimentou o bispo %d para %s, %s.\n", bispo, diagonal, sentido);
+                for (sentido = 1; sentido >= 1 && sentido <= 5; sentido++) {
+                    printf("Voce movimentou a peca %d contagem, %s para %s.\n",sentido, diagonal, sentido_peca);
                 }
-                printf("Peca movimentada com sucesso !\n");
-                printf("===========================================\n");
+                printf("PARABENS ! Peca movimentada com sucesso !\n");
+                printf("==========================================\n");
                 break;
             case 4:
-                printf("### OPCAO SELECIONADA: SAIR DO JOGO ###\n");
-                printf("=======================================\n");
-                printf("Voce saiu do jogo!\n");
+                printf("### Opcao selecionada: Sair do Jogo ###\n");
+                printf("Voce saiu do Jogo de XADREZ !.\n");
                 break;
-            default:
-                printf("Selecione a opcao valida!\n");
+                default:
+                printf("SELECIONE A OPCAO VALIDA!.\n");
                 break;
+
         }
     }while (opcao != 4);
 
-
-
+    return 0;
+}
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
@@ -106,6 +106,3 @@ int main() {
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
-
-    return 0;
-}
