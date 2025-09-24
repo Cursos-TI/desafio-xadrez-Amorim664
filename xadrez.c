@@ -4,7 +4,7 @@ int main() {
     // DEFININDO VARIAVEIS DO JOGO DE XADREZ
 
     int opcao, sentido;
-    char nome [20], sentido_peca[20], diagonal[20];
+    char nome [20], sentido_peca[20], diagonal[20], cima_baixo[20], direita_esquerda[20];
 
 
 
@@ -21,7 +21,8 @@ int main() {
         printf("1. Movimentar a TORRE ?.\n");
         printf("2. Movimentar a RAINHA ?.\n");
         printf("3. Movimentar o BISPO ?.\n");
-        printf("4. Sair do Jogo ?.\n");
+        printf("4. Movimentar o Cavalo ?\n");
+        printf("5. Sair do Jogo ?.\n");
         printf("================================================================\n");
 
         // DEFININDO A INTERAÇÃO COM O USUÁRIO
@@ -37,6 +38,7 @@ int main() {
                 printf("Informe o sentido do movimento [Direita-Esquerda-Cima-Baixo]: \n ");
                 scanf("%s", &sentido_peca);
 
+                // LOGICA DA MOVIMENTAÇÃO DA PEÇA TORRE
                 for (sentido = 1; sentido >=1 && sentido <= 5; sentido++) {
                     printf("Voce movimentou a peca %d contagem e para %s.\n",sentido, sentido_peca);
                 }
@@ -50,6 +52,7 @@ int main() {
                 printf("Informe o sentido do movimento [Direita-Esquerda-Cima-Baixo]: \n ");
                 scanf("%s", &sentido_peca);
 
+                // LOGICA DA MOVIMENTAÇÃO DA PEÇA RAINHA
                 for (sentido = 1; sentido >= 1 && sentido <= 8; sentido++) {
                     printf("Voce movimentou a peca %d contagem e para %s.\n",sentido, sentido_peca);
                 }
@@ -65,6 +68,7 @@ int main() {
                 printf("Informe o sentido do movimento [Direita-Esquerda]: \n ");
                 scanf("%s", &sentido_peca);
 
+                // LOGICA DA MOVIMENTAÇÃO DA PEÇA BISPO
                 for (sentido = 1; sentido >= 1 && sentido <= 5; sentido++) {
                     printf("Voce movimentou a peca %d contagem, %s para %s.\n",sentido, diagonal, sentido_peca);
                 }
@@ -72,6 +76,25 @@ int main() {
                 printf("==========================================\n");
                 break;
             case 4:
+                printf("### Opcao selecionada: movimentar o CAVALO ###\n");
+                printf("Informe quantas vezes deseja movimentar: \n");
+                scanf("%d", &sentido);
+                printf("Informe o sentido do movimento [Direita-Esquerda-Cima-Baixo]:\n");
+                scanf("%s", &sentido_peca);
+                printf("Informe o ultimo movimento L do Cavalo [Cima-Baixo ou Direita-Esquerda]:\n");
+                scanf("%s", &direita_esquerda);
+
+                // LOGICA DA MOVIMENTAÇÃO DA PEÇA CAVALO
+                for (sentido = 1; sentido <= 2; sentido++) {
+                    for (int l = 1; l <= 1; l++) {
+                        printf("Voce movimentou a peca para %s, %d vezes e %s, %d vez.\n ", sentido_peca, sentido, direita_esquerda, l);
+                    }
+                    printf("\n");
+                }
+                printf("PARABENS ! Peca movimentada com sucesso !\n");
+                printf("==========================================\n");
+                break;
+            case 5:
                 printf("### Opcao selecionada: Sair do Jogo ###\n");
                 printf("Voce saiu do Jogo de XADREZ !.\n");
                 break;
@@ -80,7 +103,7 @@ int main() {
                 break;
 
         }
-    }while (opcao != 4);
+    }while (opcao != 5);
 
     return 0;
 }
